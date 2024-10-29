@@ -1,37 +1,49 @@
 body {
   margin: 0;
+  font-family: 'Arial', sans-serif; /* Default font for the body */
+  background-color: #f9f9f9; /* Light background for better contrast */
 }
+
 * {
   scroll-behavior: smooth;
 }
+
 nav {
   height: 4vmax;
   display: flex;
   align-items: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.507);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   position: sticky;
-  top: 0%;
-  background-color: white;
+  top: 0;
+  background-color: #ffffff;
   z-index: 10000;
+  transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+nav:hover {
+  background-color: #f0f0f0; /* Slightly darker on hover */
 }
 
 .left {
   width: 20%;
   display: flex;
-
   justify-content: center;
 }
+
 .left > a {
   text-decoration: none;
-  color: crimson;
+  color: #e63946; /* Crimson */
   font-size: 2vmax;
-
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.left > a:hover {
+  color: #d62839; /* Darker shade on hover */
 }
 
 .mid {
   width: 60%;
-
   display: flex;
   justify-content: space-evenly;
   align-self: stretch;
@@ -39,34 +51,41 @@ nav {
 
 .mid > a {
   text-decoration: none;
-  color: black;
+  color: #333; /* Darker text color */
   font-size: 1.4vmax;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color 0.3s, border-bottom 0.3s; /* Smooth transitions */
 }
 
 .mid > a:hover {
-  border-bottom: 2px solid crimson;
-  color: crimson;
+  border-bottom: 2px solid #e63946; /* Underline effect on hover */
+  color: #e63946; /* Change text color on hover */
 }
+
 .right {
   width: 20%;
   display: flex;
   justify-content: center;
 }
+
 .right > img {
   width: 2.5vmax;
   margin: 1vmax;
   cursor: pointer;
+  transition: transform 0.3s; /* Animation on hover */
+}
+
+.right > img:hover {
+  transform: scale(1.1); /* Scale effect on hover */
 }
 
 .home {
   display: flex;
   height: 90vh;
-  background-image: radial-gradient(rgb(230, 221, 255), rgb(184, 184, 223));
+  background-image: radial-gradient(circle, rgba(230, 221, 255, 1), rgba(184, 184, 223, 1));
+  transition: background-image 0.5s; /* Transition for background */
 }
 
 .container {
@@ -80,30 +99,36 @@ nav {
 
 #rightContainer > img {
   margin-right: 7vmax;
-  filter: drop-shadow(0 0 20px black);
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+  transition: filter 0.3s; /* Animation on hover */
+}
+
+#rightContainer > img:hover {
+  filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.7)); /* Stronger shadow on hover */
 }
 
 #leftContainer {
   display: flex;
   flex-direction: column;
   padding: 3vmax;
-  box-sizing: border-box;
   justify-content: center;
 }
 
 #leftContainer > h1 {
   font-size: 5vmax;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #1d3557; /* Darker shade for headings */
 }
+
 #leftContainer > h2 {
   margin-top: -8%;
   font-size: 2vmax;
-  font-family: sans-serif;
+  color: #457b9d; /* Complementary color */
 }
+
 #leftContainer > p {
   margin-left: 2%;
   font-size: 1.2vmax;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 
 #leftContainer > button {
@@ -112,14 +137,17 @@ nav {
   margin-left: 2%;
   border-radius: 2vmax;
   border: none;
-  background-color: crimson;
+  background-color: #e63946; /* Main button color */
   color: white;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
 }
+
 #leftContainer > button:hover {
-  background-color: rgb(177, 23, 54);
+  background-color: #d62839; /* Darker shade on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
 }
 
 /* ------------------------------------ */
@@ -128,9 +156,10 @@ nav {
   text-align: center;
   margin: 5vmax auto;
   font-size: 2.5vmax;
-  border-bottom: 5px solid crimson;
+  border-bottom: 5px solid #e63946;
   padding: 1vmax;
   width: 25vw;
+  color: #1d3557; /* Darker shade for headings */
 }
 
 .productsContainer {
@@ -144,34 +173,53 @@ nav {
 
 /* ---------------------- */
 .product {
-  transition: all 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for transform and shadow */
   cursor: pointer;
   height: 30vmax;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 1vmax;
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 10px; /* Rounded corners for products */
+  padding: 1vmax; /* Padding inside product card */
+  background-color: #fff; /* White background for product card */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
+
+.product:hover {
+  transform: translateY(-10px); /* Lift effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), /* Stronger shadow on hover */
+              0 0 10px rgba(230, 97, 54, 0.8), /* Red glow effect */
+              0 0 20px rgba(230, 97, 54, 0.6); /* Larger red glow effect */
+}
+
 .product > img {
   width: 20vmax;
+  border-radius: 10px; /* Rounded corners for images */
+  transition: transform 0.3s; /* Animation on hover */
+}
+
+.product:hover > img {
+  transform: scale(1.05); /* Scale effect on hover */
 }
 
 .product > h4 {
   margin: 2%;
-}
-.product > h5 {
-  margin: 0px;
+  color: #333; /* Darker text for product name */
 }
 
-.product:hover {
-  transform: translateY(-10px);
+.product > h5 {
+  margin: 0px;
+  color: #e63946; /* Main color for pricing */
 }
+
 /* --------------------------------- */
 
 footer {
   margin-top: 10vmax;
   padding: 2vmax;
-  background-color: rgb(34, 33, 33);
+  background-color: #333; /* Dark footer background */
   color: white;
   display: flex;
   align-items: center;
@@ -180,57 +228,146 @@ footer {
 .leftFooter {
   width: 20%;
   display: flex;
-
   flex-direction: column;
   align-items: center;
 }
+
 .leftFooter > h4 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #e63946; /* Main color for footer headings */
 }
+
 .leftFooter > p {
   text-align: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
 .leftFooter > img {
   width: 10vmax;
   margin: 1vmax;
   cursor: pointer;
+  transition: transform 0.3s; /* Animation on hover */
+}
+
+.leftFooter > img:hover {
+  transform: scale(1.1); /* Scale effect on hover */
 }
 
 .midFooter {
   width: 60%;
-
   text-align: center;
 }
 
 .midFooter > h1 {
   font-size: 4vmax;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: crimson;
+  color: #e63946; /* Main color for footer heading */
 }
+
 .midFooter > p {
   max-width: 60%;
-
   margin: 1vmax auto;
 }
 
 .rightFooter {
   width: 20%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .rightFooter > h4 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1.4vmax;
   text-decoration: underline;
 }
+
 .rightFooter > a {
   text-decoration: none;
   font-size: 1.3vmax;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: white;
   margin: 0.5vmax;
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.rightFooter > a:hover {
+  color: #e63946; /* Change color on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .left,
+  .mid,
+  .right {
+    width: 100%; /* Stack elements vertically on small screens */
+  }
+
+  .mid {
+    flex-direction: column; /* Vertical alignment for navigation links */
+    align-items: center; /* Center the links */
+  }
+
+  #leftContainer > h1 {
+    font-size: 8vw; /* Responsive heading size */
+  }
+
+  #leftContainer > h2,
+  #leftContainer > p {
+    font-size: 4vw; /* Responsive text size */
+  }
+
+  #leftContainer > button {
+    width: 80%; /* Full width button on small screens */
+  }
+
+  #products > h1 {
+    font-size: 6vw; /* Responsive product heading size */
+  }
+
+  .productsContainer {
+    flex-direction: column; /* Stack products vertically on small screens */
+    align-items: center; /* Center the products */
+  }
+
+  .product {
+    width: 90%; /* Full width for product cards on small screens */
+    margin: 2% 0; /* Adjust margin for stacking */
+  }
+
+  footer {
+    flex-direction: column; /* Stack footer elements vertically */
+    align-items: center; /* Center footer elements */
+  }
+
+  .leftFooter, .midFooter, .rightFooter {
+    width: 100%; /* Full width for footer sections */
+    text-align: center; /* Center text in footer */
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    height: 10vmax; /* Increase navbar height on small screens */
+  }
+
+  nav:hover {
+    background-color: #fff; /* Maintain background color on hover */
+  }
+
+  .right > img {
+    width: 5vmax; /* Larger icons for better usability */
+  }
+
+  #leftContainer > h1 {
+    font-size: 10vw; /* Adjust for very small screens */
+  }
+
+  #products > h1 {
+    font-size: 8vw; /* Adjust product heading size for very small screens */
+  }
+
+  .product {
+    height: 50vmax; /* Adjust height for product cards on very small screens */
+  }
+
+  footer {
+    padding: 4vmax; /* Increase padding for footer on small screens */
+  }
 }
